@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">L04-Reservation</string>
+    <string name="restaurant_reservation_app">Restaurant Reservation App</string>
+    <string name="name">Name:</string>
+    <string name="phone_number">Phone Number:</string>
+    <string name="group_size">Group Size:</string>
+    <string name="check_this_to_be_seated_at_the_smoking_area">Check this to be seated at the Smoking Area</string>
+    <string name="submit">Submit</string>
+    <string name="reset">Reset</string>
+</resources>
