@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import java.util.Calendar;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText name;
@@ -37,9 +39,18 @@ public class MainActivity extends AppCompatActivity {
         submit = findViewById(R.id.submit);
         reset = findViewById(R.id.reset);
 
-        dp.updateDate(2020,06-1,1);
+
+
+        Calendar thisYear = Calendar.getInstance();
+        int currentYear = thisYear.get(Calendar.YEAR);
+        int currentMonth = thisYear.get(Calendar.MONTH);
+        int currentDay = thisYear.get(Calendar.DAY_OF_MONTH);
+
+        dp.updateDate(currentYear,currentMonth,currentDay + 1);
         tp.setCurrentHour(19);
         tp.setCurrentMinute(30);
+        dp.setMinDate(System.currentTimeMillis()+ 86400000); //86400000 is 1 day in milliseconds
+
 
 
         tp.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
@@ -55,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 phone.setText("");
                 grpSize.setText("");
                 cbSmoke.setChecked(false);
-                dp.updateDate(2020,06-1,1);
+                dp.updateDate(currentYear,currentMonth,currentDay + 1);
                 tp.setCurrentHour(19);
                 tp.setCurrentMinute(30);
             }
