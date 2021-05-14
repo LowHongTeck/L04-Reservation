@@ -9,6 +9,7 @@ import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,12 +37,64 @@ public class MainActivity extends AppCompatActivity {
         submit = findViewById(R.id.submit);
         reset = findViewById(R.id.reset);
 
+        dp.updateDate(2020,06-1,1);
+        tp.setCurrentHour(19);
+        tp.setCurrentMinute(30);
+
+
+        tp.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
+                if (hourOfDay > 20){
+                    tp.setCurrentHour(20);
+                }
+
+                if (hourOfDay < 8){
+                    tp.setCurrentHour(8);
+                }
+
+            }
+        });
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String strName = name.getText().toString();
+                String strPhone = phone.getText().toString();
+                String strGrpSize = grpSize.getText().toString();
+
+                String smokeArea = "";
+
+                if (cbSmoke.isChecked()){
+                    smokeArea = "Seated at Smoking Area";
+                } else {
+                    smokeArea = "Seated at Non-Smoking Area";
+                }
+
+                String confirmation = String.format("[CONFIRMATION DETAILS]\nName: %s\nPhone Number: %s\nGroup Size: %s" +
+                        "\nSeat: %s\nDate: %d/%d/%d\nTime: %d:%d", strName, strPhone, strGrpSize, smokeArea,dp.getDayOfMonth(),dp.getMonth()+1,dp.getYear(),tp.getCurrentHour(),tp.getCurrentMinute());
+
+                if (strName.isEmpty() || strPhone.isEmpty() || strGrpSize.isEmpty()){
+                    Toast.makeText(MainActivity.this, "There are empty fields", Toast.LENGTH_SHORT).show();
+                } else{
+                    Toast.makeText(MainActivity.this, confirmation, Toast.LENGTH_SHORT).show();
+                }
 
 
+            }
+        });
+
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                name.setText("");
+                phone.setText("");
+                grpSize.setText("");
+                cbSmoke.setChecked(false);
+                dp.updateDate(2020,06-1,1);
+                tp.setCurrentHour(19);
+                tp.setCurrentMinute(30);
             }
         });
 
