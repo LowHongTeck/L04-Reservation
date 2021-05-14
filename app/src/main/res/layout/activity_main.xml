@@ -13,6 +13,11 @@
         android:textColor="#000000"
         android:textSize="24sp" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/black" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -20,7 +25,21 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textPersonalDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/personal_details"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@android:color/black" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -29,7 +48,7 @@
 
                 <TextView
                     android:id="@+id/textName"
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/name" />
@@ -40,6 +59,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:ems="10"
+                    android:hint="@string/full_name"
                     android:inputType="textPersonName" />
             </LinearLayout>
 
@@ -50,7 +70,7 @@
 
                 <TextView
                     android:id="@+id/textPhone"
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/phone_number" />
@@ -61,6 +81,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:ems="10"
+                    android:hint="@string/_91234567"
                     android:inputType="number" />
             </LinearLayout>
 
@@ -71,7 +92,7 @@
 
                 <TextView
                     android:id="@+id/textGSize"
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="@string/group_size" />
@@ -82,22 +103,65 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:ems="10"
+                    android:hint="@string/no_of_people"
                     android:inputType="number" />
             </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@android:color/black" />
+
+            <TextView
+                android:id="@+id/textDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/date"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@android:color/black" />
 
             <DatePicker
                 android:id="@+id/datePicker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:datePickerMode="spinner"
                 android:calendarViewShown="false"
-                />
+                android:datePickerMode="spinner" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@android:color/black" />
+
+            <TextView
+                android:id="@+id/textTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/time"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@android:color/black" />
 
             <TimePicker
                 android:id="@+id/timePicker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:timePickerMode="spinner"/>
+                android:timePickerMode="spinner" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@android:color/black" />
 
             <CheckBox
                 android:id="@+id/checkBox"
@@ -105,6 +169,11 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:text="@string/check_this_to_be_seated_at_the_smoking_area" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@android:color/black" />
 
             <LinearLayout
                 android:layout_width="match_parent"

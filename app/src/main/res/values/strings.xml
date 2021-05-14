@@ -7,4 +7,10 @@
     <string name="check_this_to_be_seated_at_the_smoking_area">Check this to be seated at the Smoking Area</string>
     <string name="submit">Submit</string>
     <string name="reset">Reset</string>
+    <string name="time">Time</string>
+    <string name="date">Date</string>
+    <string name="personal_details">Personal Details</string>
+    <string name="full_name">Full Name</string>
+    <string name="_91234567">91234567</string>
+    <string name="no_of_people">No. of People</string>
 </resources>
